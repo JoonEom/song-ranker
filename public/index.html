@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spotify Rating App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Song Ranker </title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
   <h1>Spotify Rating App</h1>
   <div id="login">
     <a href="/auth">Log in with Spotify</a>
   </div>
   <div id="app" style="display: none;">
-    <h2>Currently playing: <span id="song-name"></span> by <span id="artist-name"></span></h2>
-    <form id="rate-form">
-      <input type="hidden" id="song-uri">
-      <label for="rating">Rate this song (1-10):</label>
-      <input type="number" id="rating" min="1" max="10" required>
-      <button type="button" onclick="submitRating()">Submit</button>
-    </form>
-    <p id="message"></p>
+    <div id="container">
+      <div id="screen">
+        <div id="song-info">
+          <h2 id="song-name">Song Name</h2>
+          <p id="artist-name">Artist Name</p>
+        </div>
+      </div>
+      <div id="controls">
+        <div id="rate-form">
+          <input type="hidden" id="song-uri">
+          <label for="rating">Rate this song (1-10):</label>
+          <input type="number" id="rating" min="1" max="10" required>
+          <button type="submit" onclick="submitRating()">Submit</button>
+        </div>
+        <div id="message"></div>
+      </div>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>
